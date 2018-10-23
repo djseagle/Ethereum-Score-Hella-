@@ -48,8 +48,30 @@ window.App = {
       console.log(e, null)
     })
   },
+//testSum
+ testSum:function(){
+    const a = document.getElementById('testAddress').value
+    const b = document.getElementById('testPassword').value
+   //alert(a+b)
+   const testSummary = document.getElementById('testSummary').value
+   //console.log(a+b)
 
-
+ },
+  // 状态栏显示testStatus
+  testStatus: function (message) {
+    const status = document.getElementById('status')
+    status.innerHTML = message
+  },
+  // 查询Ganache version
+  getGanacheVersion: function () {
+    //let allAccount = ''
+    // window.web3.eth.accounts.forEach(e => {
+    //   allAccount += e + '\n'
+    // })
+    const version = window.web3.eth
+    //window.App.setConsole(version)
+    console.log(version)
+  },
   // 新建客户
   newCustomer: function () {
     customer.newCustomer(ScoreInstance, account)

@@ -20,6 +20,9 @@ module.exports = {
     ]),
     new CopyWebpackPlugin([
       { from: './app/merchant.html', to: 'merchant.html' }
+    ]),
+    new CopyWebpackPlugin([
+      { from: './app/test.html', to: 'test.html' }
     ])
   ],
   module: {
