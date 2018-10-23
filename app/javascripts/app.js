@@ -4,6 +4,8 @@ import '../stylesheets/app.css'
 const customer = require('./customer')
 const bank = require('./bank')
 const merchant = require('./merchant')
+const test = require('./test')
+
 // Import libraries we need.
 import { default as Web3 } from 'web3'
 import { default as contract } from 'truffle-contract'
@@ -46,6 +48,8 @@ window.App = {
       console.log(e, null)
     })
   },
+
+
   // 新建客户
   newCustomer: function () {
     customer.newCustomer(ScoreInstance, account)
