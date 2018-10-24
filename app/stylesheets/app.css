@@ -74,6 +74,11 @@ h3 {
   color: #666;
 }
 
+.halfblock {
+  margin: 2px;
+  border: 1px;
+  margin: 10px;
+}
 
 .block {
   margin: 2px;

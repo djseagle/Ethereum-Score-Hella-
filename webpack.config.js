@@ -23,7 +23,10 @@ module.exports = {
     ]),
     new CopyWebpackPlugin([
       { from: './app/test.html', to: 'test.html' }
-    ])
+    ]),
+      new CopyWebpackPlugin([
+          { from: './app/vote.html', to: 'vote.html' }
+      ])
   ],
   module: {
     rules: [

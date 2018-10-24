@@ -6,15 +6,23 @@
     <script src="./app.js"></script>
 </head>
 <body>
-
+<script>
+    function displayDate() {
+        document.getElementById('displayDate').innerHTML=Date()
+    }
+</script>
 <div>
     <a href="index.html">Index</a>
     <a href="bank.html">Bank</a>
     <a href="customer.html">Customer</a>
     <a href="merchant.html">Merchant</a>
     <a href="test.html">Test</a>
+    <a href="vote.html">Vote</a>
 </div>
-<button type="button" onclick="Date">Date</button>
+<div id="displayDate">
+    <button type="button" onclick="displayDate()">Date</button>
+</div>
+
 <div >
 
 
@@ -45,7 +53,7 @@
         </div>
         <br>
         <br>
-        <button type="button" >getGanacheVersion</button>
+        <button type="button" onclick="App.getGanacheVersion()">getGanacheVersion</button>
         <br>
         <p>Version</p>
         <div id="getGanacheVersion"></div>

@@ -5,6 +5,7 @@ const customer = require('./customer')
 const bank = require('./bank')
 const merchant = require('./merchant')
 const test = require('./test')
+const vote = require('./vote')
 
 // Import libraries we need.
 import { default as Web3 } from 'web3'
@@ -12,7 +13,7 @@ import { default as contract } from 'truffle-contract'
 
 
 // Import our contract artifacts and turn them into usable abstractions.
-import ScoreArtifacts from '../../build/contracts/Score'
+import ScoreArtifacts from '../../build/contracts/Vote'
 
 // MetaCoin is our usable abstraction, which we'll use through the code below.
 let ScoreContract = contract(ScoreArtifacts)
