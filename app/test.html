@@ -32,15 +32,25 @@
                                                              placeholder="e.g., 1,2,3,"/>
         <br/><label for="testPassword">testPassword</label><input type="text" id="testPassword"
                                                             placeholder="e.g., 1,2,3,4,5,6"/>
-        <button onclick="App.testSum()">testSum</button><input type="text" id="testSummary"/>
+        <button type="button" onclick="App.testSum()">TestSum</button>
+        <h3>Result</h3>
+        <div id="testSummary"></div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div>
-        <button onclick="App.getGanacheVersion()">Ganache信息提取</button>
+
+    <div class="block">
+        <button onclick="App.testSum()">testConsole</button>
+        <div>
+            <p>testConsole</p>
+            <div id="testConsole"></div>
+        </div>
+        <br>
+        <br>
+        <button type="button" >getGanacheVersion</button>
+        <br>
+        <p>Version</p>
+        <div id="getGanacheVersion"></div>
+        <br>
+        <br>
         <br><br>
     </div>
     <hr>

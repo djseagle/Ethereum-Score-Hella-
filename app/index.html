@@ -14,12 +14,16 @@
     <a href="merchant.html">Merchant</a>
     <a href="test.html">Test</a>
 </div>
+<br>
 <script>
-    function Date () {
-      document.getElementById('Date').innerHTML=Date
+    function displayDate () {
+      document.getElementById('DateDemo').innerHTML=Date()
     }
 </script>
-<button type="button" onclick="Date">Date</button>
+<div id="DateDemo">
+    <button type="button" onclick="displayDate()">Date</button>
+</div>
+<br>
 <div >
 
 
@@ -85,8 +89,7 @@
     <br/>
     <h2>测试信息</h2>
     <div>
-        <button onclick="App.allAccounts()">Account(console)</button>
-        <br><br>
+        <button type="button" onclick="App.allAccounts()">Account(console)</button>
     </div>
     <div>
         <p>Console</p>

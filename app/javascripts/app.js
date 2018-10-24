@@ -52,26 +52,17 @@ window.App = {
  testSum:function(){
     const a = document.getElementById('testAddress').value
     const b = document.getElementById('testPassword').value
-   //alert(a+b)
-   const testSummary = document.getElementById('testSummary').value
-   //console.log(a+b)
+   var testSummary =  a + b
 
+    window.App.setSummary(testSummary)
  },
-  // 状态栏显示testStatus
-  testStatus: function (message) {
-    const status = document.getElementById('status')
-    status.innerHTML = message
-  },
+
   // 查询Ganache version
   getGanacheVersion: function () {
-    //let allAccount = ''
-    // window.web3.eth.accounts.forEach(e => {
-    //   allAccount += e + '\n'
-    // })
-    const version = window.web3.eth
-    //window.App.setConsole(version)
-    console.log(version)
+    const version = window.web3.version.node()
+    window.App.displayGanacheVersion('version22222222')
   },
+
   // 新建客户
   newCustomer: function () {
     customer.newCustomer(ScoreInstance, account)
@@ -164,6 +155,16 @@ window.App = {
   // 显示console
   setConsole: function (message) {
     const status = document.getElementById('console')
+    status.innerHTML = message
+  },
+  // 显示testSummary
+  setSummary: function(message){
+    const status = document.getElementById('testConsole')
+    status.innerHTML = message
+  },
+  // 显示GanacheVersion
+  displayGanacheVersion: function(message) {
+    const status = document.getElementById('getGanacheVersion')
     status.innerHTML = message
   }
 }
