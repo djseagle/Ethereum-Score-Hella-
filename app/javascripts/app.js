@@ -51,8 +51,8 @@ window.App = {
   },
 //testSum
  testSum:function(){
-    const a = document.getElementById('testAddress').value
-    const b = document.getElementById('testPassword').value
+    const a = document.getElementById('VoterAddress').value
+    const b = document.getElementById('VoterPassword').value
     var testSummary =  a + b
     window.App.setSummary(testSummary)
  },
@@ -69,9 +69,9 @@ window.App = {
     //         window.App.displayGanacheVersion('error')
     //     }
     // })
-    // const address = window.web3.eth.accounts[2]
-    // const coinbase = window.web3.eth.getBalance(address);
-    // window.App.displayGanacheVersion('account'+address + 'balance :'+coinbase)
+    const address = window.web3.eth.accounts[2]
+    const coinbase = window.web3.eth.getBalance(address);
+    window.App.displayGanacheVersion('account'+address + '        balance :'+coinbase)
 
     },
 
@@ -171,7 +171,7 @@ window.App = {
   },
   // 显示testSummary
   setSummary: function(message){
-    const status = document.getElementById('testConsole')
+    const status = document.getElementById('testSummary')
     status.innerHTML = message
   },
   // 显示GanacheVersion

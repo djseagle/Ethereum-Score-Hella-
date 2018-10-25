@@ -14,7 +14,11 @@ var VoteAbi = [ { "inputs": [], "payable": false, "stateMutability": "nonpayable
 
 //var VoteContractAddress = ''
 var ScoreContractAddress = '0xa70212d30ecf5ebdced5223af02198d3d702ec60'
-const greeter = web3.eth.contract(abi).at(contractAddress)
-
+//const greeter = web3.eth.contract(Scoreabi).at(contractAddress)
 //console.log(greeter)
-console.log(web3.isConnected())
+//const contraceAddress = web3.eth.getTransactionReceipt('{0x9d79890ffe5eb1c50b3f92bc89a951674d98f61129cfb1c1ade4967e6c55d47e}')
+
+var MyContract = web3.eth.contract(VoteAbi)
+var Instance = MyContract.at('0x9d79890ffe5eb1c50b3f92bc89a951674d98f61129cfb1c1ade4967e6c55d47e')
+console.log(Instance)
+
