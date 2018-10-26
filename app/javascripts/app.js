@@ -5,6 +5,7 @@ const customer = require('./customer')
 const bank = require('./bank')
 const merchant = require('./merchant')
 const test = require('./test')
+const vote = require('./vote')
 
 // Import libraries we need.
 import { default as Web3 } from 'web3'
@@ -13,10 +14,14 @@ import { default as contract } from 'truffle-contract'
 
 // Import our contract artifacts and turn them into usable abstractions.
 import ScoreArtifacts from '../../build/contracts/Score'
+import VoteArtifacts from '../../build/contracts/Vote'
 
 // MetaCoin is our usable abstraction, which we'll use through the code below.
 let ScoreContract = contract(ScoreArtifacts)
 let ScoreInstance
+
+let ViteContract = contract(VoteArtifacts)
+let VoteInstance
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
 // For application bootstrapping, check out window.addEventListener below.
@@ -75,7 +80,26 @@ window.App = {
 
     },
 
-  // 新建客户
+  // 提交投票
+  voterSubmit: function(){
+
+  },
+  // 当前方案列表显示
+  currentTopicsOverview: function(){
+
+  },
+
+  // 方案提交
+  submitTopic: function(){
+
+  },
+
+  // 最终结果
+  votingResult: function(){
+
+  },
+
+  // Test新建客户
   newCustomer: function () {
     customer.newCustomer(ScoreInstance, account)
   },
