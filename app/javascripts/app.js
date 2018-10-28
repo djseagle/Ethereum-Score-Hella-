@@ -20,7 +20,7 @@ import VoteArtifacts from '../../build/contracts/Vote'
 let ScoreContract = contract(ScoreArtifacts)
 let ScoreInstance
 
-let ViteContract = contract(VoteArtifacts)
+let VoteContract = contract(VoteArtifacts)
 let VoteInstance
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
@@ -53,9 +53,15 @@ window.App = {
     }).catch(function (e) {
       console.log(e, null)
     })
+
+    VoteContract.deployed().then(function (instance) {
+        VoteInstance = instance
+    }).catch(function (e) {
+        console.log(e,null)
+    })
   },
 
-  //testSum
+  // testSum
   testSum:function(){
     const a = document.getElementById('VoterAddress').value
     const b = document.getElementById('VoterPassword').value
@@ -79,7 +85,7 @@ window.App = {
     const coinbase = window.web3.eth.getBalance(address);
     window.App.displayGanacheVersion('account'+address + '        balance :'+coinbase)
 
-    },
+  },
 
   // 提交投票
   voterSubmit: function(){
@@ -88,10 +94,10 @@ window.App = {
 
   // 当前方案列表显示
   getTopicList: function(){
-      let accounts = ''
-      window.web3.eth.accounts.forEach(e => accounts += e  +'\n')
-      //window.App.displayTopicList(accounts)
-      window.App.displayTopicList('aaaaaaaaaaaaaaa\n\t bbbbbbbbbbbb\n ccccccccccc\n')
+    let accounts = ''
+    window.web3.eth.accounts.forEach(e => accounts += e  +'\n')
+    // window.App.displayTopicList(accounts)
+    window.App.displayTopicList('aaaaaaaaaaaaaaa\n\t bbbbbbbbbbbb\n ccccccccccc\n')
   },
 
   // 方案提交
