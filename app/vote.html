@@ -7,7 +7,11 @@
     <link rel="stylesheet" type="text/css" href="./stylesheets/app.css">
 </head>
 <body>
-
+<script>
+    function VoteDate() {
+        document.getElementById('displayDate').innerHTML=Date()
+    }
+</script>
 <div class="navbar">
     <a href="index.html">Index</a>
     <a href="bank.html">Bank</a>
@@ -43,12 +47,14 @@
     </div>
     <h2>当前方案列表</h2>
     <div class="block">
-        <h3>Voter登录</h3>
-        <label for="customerLoginAddr">Voter地址</label><input type="text" id="customerLoginAddr"
+
+        <!--label for="customerLoginAddr">Voter地址</label><input type="text" id="customerLoginAddr"
                                                                        placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae">
         <br><label for="customerLoginPwd">密码</label><input type="text" id="customerLoginPwd"
-                                                            placeholder="e.g., ******">
-        <button id="customerLogin" onclick="App.customerLogin()">Voter登录</button>
+                                                            placeholder="e.g., ******"-->
+        <button id="getTopicList" onclick="App.getTopicList()">点击获取当前方案列表</button>
+        <div id="topicList"></div>
+        <div id="displayDate"></div>
 
     </div>
 

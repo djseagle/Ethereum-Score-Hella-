@@ -54,13 +54,14 @@ window.App = {
       console.log(e, null)
     })
   },
-//testSum
- testSum:function(){
+
+  //testSum
+  testSum:function(){
     const a = document.getElementById('VoterAddress').value
     const b = document.getElementById('VoterPassword').value
     var testSummary =  a + b
-    window.App.setSummary(testSummary)
- },
+    window.App.displayTopicList(testSummary)
+  },
 
   // 查询Ganache version
   getGanacheVersion: function () {
@@ -84,9 +85,13 @@ window.App = {
   voterSubmit: function(){
 
   },
-  // 当前方案列表显示
-  currentTopicsOverview: function(){
 
+  // 当前方案列表显示
+  getTopicList: function(){
+      let accounts = ''
+      window.web3.eth.accounts.forEach(e => accounts += e  +'\n')
+      //window.App.displayTopicList(accounts)
+      window.App.displayTopicList('aaaaaaaaaaaaaaa\n\t bbbbbbbbbbbb\n ccccccccccc\n')
   },
 
   // 方案提交
@@ -197,6 +202,11 @@ window.App = {
   setSummary: function(message){
     const status = document.getElementById('testSummary')
     status.innerHTML = message
+  },
+  // 显示方案列表 topic list
+  displayTopicList: function(message){
+      const status = document.getElementById('topicList')
+      status.innerHTML = message
   },
   // 显示GanacheVersion
   displayGanacheVersion: function(message) {
