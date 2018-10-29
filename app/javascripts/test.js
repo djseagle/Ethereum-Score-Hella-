@@ -37,12 +37,15 @@ module.exports = {
     })
   },
   //testsum
-  testsummary:function() {
+  testsummary:function(TestInstance) {
     const a = document.getElementById('testa').value
     const b = document.getElementById('testb').value
     const c = a + b
+    // TestInstance.setArgs(a,b).then(function (c) {
+    //   window.App.displayTopicList(c)
+    // })
     console.log('testsummary done, pending for display')
-    window.App.displaytestsummary(c)
+    // window.App.displaytestsummary(c)
   },
 
 

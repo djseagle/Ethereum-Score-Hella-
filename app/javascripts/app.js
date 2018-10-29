@@ -78,7 +78,7 @@ window.App = {
     // const c = a + b
     //window.App.displaytestsummary(c)
     //test.displaytestsummary(c)
-    test.testsummary()
+    test.testsummary(TestInstance)
   },
 
   // displaytestsummary
@@ -116,7 +116,7 @@ window.App = {
     let accounts = ''
     window.web3.eth.accounts.forEach(e => accounts += e  +'\n')
     // window.App.displayTopicList(accounts)
-    window.App.displayTopicList('aaaaaaaaaaaaaa    bbbbbbbbbbbb   ccccccccccc')
+    window.App.displayTopicList('1.aaaaaaaaaaaaaa    2.bbbbbbbbbbbb   3.ccccccccccc')
   },
 
   // Vote Page 方案提交

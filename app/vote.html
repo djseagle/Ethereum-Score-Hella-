@@ -58,7 +58,7 @@
 
     </div>
 
-    <h2>方案提交</h2>
+    <!--h2>方案提交</h2>
     <div class="block">
         <h3>方案注册</h3>
         <label for="merchantAddress">提交者地址</label><input type="text" id="merchantAddress"
@@ -67,7 +67,7 @@
         <br>
         <button id="newMerchant" onclick="App.newMerchant()">方案注册</button>
 
-    </div>
+    </div-->
 
     <!--div class="block">
         <h3>商家登录</h3>
@@ -79,14 +79,13 @@
     </div-->
 
 
-    <h2>最终结果</h2>
+    <h2>投票结果</h2>
     <div class="block">
-        <h3>银行管理员登录</h3>
-        <label for="bankLoginAddr">银行地址</label><input type="text" id="bankLoginAddr"
-                                                                   placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae">
-        <br><label for="bankLoginPwd">密码</label><input type="text" id="bankLoginPwd" placeholder="e.g., ******">
-        <br>
-        <button id="bankLogin" onclick="App.bankLogin()">RESULT VIEW</button>
+        <!--h3>银行管理员登录</h3-->
+        <label for="bankLoginAddr">Topic A</label><div id="voteResultOfA"></div>
+        <br><label for="bankLoginPwd">Topic B</label><div id="voteResultOfB"></div>
+        <br><label for="bankLoginPwd">Topic C</label><div id="voteResultOfC"></div>
+        <button id="bankLogin" onclick="App.bankLogin()">Click For RESULT VIEW</button>
     </div>
 
 

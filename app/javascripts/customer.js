@@ -5,23 +5,61 @@ module.exports = {
     const address = document.getElementById('customerAddress').value
     const password = document.getElementById('customerPassword').value
     console.log(address + ' ' + password)
-    ScoreInstance.newCustomer(address, password, { from: account, gas: 3000000 }).then(function () {
-      ScoreInstance.NewCustomer(function (e, r) {
-        if (!e) {
-          console.log(r)
-          console.log(r.args)
-          if (r.args.isSuccess === true) {
-            window.App.setStatus('注册成功')
-          } else {
-            window.App.setStatus('账户已经注册')
-          }
-        } else {
-          console.log(e)
-        }
-      })
+    ScoreInstance.newCustomer(address,password,{from:account, gas:3000000}).then(function () {
+        ScoreInstance.NewCustomer(function (e,r) {
+            if(!e){
+                console.log(r)
+                console.log(r.args)
+                if (r.args.isSuccess == true){
+                    window.App.setStatus(' 注册成功')
+                    console.log(' 注册成功')
+                } else{
+                    window.App.setStatus('账户已注册')
+                }
+            }else {
+                console.log(e)
+            }
+        })
     })
+    console.log('added')
+    // ScoreInstance.newCustomer(address, password, { from: account, gas: 3000000 }).then(function () {
+    //   ScoreInstance.NewCustomer(function (e, r) {
+    //     if (!e) {
+    //       console.log(r)
+    //       console.log(r.args)
+    //       if (r.args.isSuccess === true) {
+    //         window.App.setStatus('注册成功')
+    //         console.log('注册成功')
+    //       } else {
+    //         window.App.setStatus('账户已经注册!')
+    //       }
+    //     } else {
+    //       console.log(e)
+    //     }
+    //   })
+    // })
   },
+
+
   // 客户登录
+  // customerLogin: function(ScoreInstance, account){
+  //     const address = document.getElementById('customerLoginAddr').value
+  //     const password = document.getElementById('customerLoginPwd').value
+  //     ScoreInstance.getCustomerPassword(address,{from:account, gas:3000000}).then(function (result) {
+  //         if(result[0]){
+  //             if (password.localeCompare(utils.hexCharCodeToStr(result[1]))==0){
+  //                 console.log('login succeed')
+  //                 window.App.setStatus('login Succeed')
+  //                 window.location.href= 'customer.html?account='+ address
+  //             } else{
+  //                 console.log('login failed')
+  //                 window.App.setStatus('login failed')
+  //             }
+  //         }
+  //     })
+  //
+  // },
+
   customerLogin: function (ScoreInstance, account) {
     const address = document.getElementById('customerLoginAddr').value
     const password = document.getElementById('customerLoginPwd').value
