@@ -1,4 +1,4 @@
-pragma solidity ^ 0.4 .24;
+pragma solidity ^ 0.4.24;
 contract Vote {
     // 状态码
     uint CODE_SUCCESS = 2000; // 操作成功
@@ -43,7 +43,6 @@ contract Vote {
             // 已经投票过
             return CODE_ERR_ISVOTED;
         }
-
         sender.voteOption[voteIndex] = VoteOption(votvoteOption, true);
         if (votvoteOption) {
             voteTypes[voteIndex].agreeCount++;

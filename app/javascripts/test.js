@@ -45,7 +45,7 @@ module.exports = {
     //   window.App.displayTopicList(c)
     // })
     console.log('testsummary done, pending for display')
-    // window.App.displaytestsummary(c)
+    window.App.displaytestsummary(c)
   },
 
 
