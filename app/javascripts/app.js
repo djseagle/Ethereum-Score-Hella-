@@ -11,10 +11,10 @@ const vote = require('./vote')
 import { default as Web3 } from 'web3'
 import { default as contract } from 'truffle-contract'
 
-
 // Import our contract artifacts and turn them into usable abstractions.
 import ScoreArtifacts from '../../build/contracts/Score'
 import VoteArtifacts from '../../build/contracts/Vote'
+import TestArtifacts from '../../build/contracts/test'
 
 // MetaCoin is our usable abstraction, which we'll use through the code below.
 let ScoreContract = contract(ScoreArtifacts)
@@ -22,6 +22,10 @@ let ScoreInstance
 
 let VoteContract = contract(VoteArtifacts)
 let VoteInstance
+
+let TestContract = contract(TestArtifacts)
+let TestInstance
+
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
 // For application bootstrapping, check out window.addEventListener below.
@@ -55,21 +59,36 @@ window.App = {
     })
 
     VoteContract.deployed().then(function (instance) {
-        VoteInstance = instance
+      VoteInstance = instance
     }).catch(function (e) {
-        console.log(e,null)
+      console.log(e,null)
+    })
+
+    TestContract.deployed().then(function (instance) {
+      TestInstance = instance
+    }).catch(function (e) {
+      console.log(e,null)
     })
   },
 
-  // testSum
+  //  Test Page |  testSum
   testSum:function(){
-    const a = document.getElementById('VoterAddress').value
-    const b = document.getElementById('VoterPassword').value
-    var testSummary =  a + b
-    window.App.displayTopicList(testSummary)
+    // const a = document.getElementById('testa').value
+    // const b = document.getElementById('testb').value
+    // const c = a + b
+    //window.App.displaytestsummary(c)
+    //test.displaytestsummary(c)
+    test.testsummary()
   },
 
-  // 查询Ganache version
+  // displaytestsummary
+  displaytestsummary:function(message){
+    const status = document.getElementById('testsumresult')
+    status.innerHTML = message
+    console.log('summary display done')
+  },
+
+  //  Test Page | 查询Ganache version
   getGanacheVersion: function () {
     // const version = window.web3.eth.accounts[0]
     // const nodeVersion = window.web3.version.node
@@ -87,30 +106,30 @@ window.App = {
 
   },
 
-  // 提交投票
+  // Vote Page提交投票
   voterSubmit: function(){
 
   },
 
-  // 当前方案列表显示
+  // Vote Page 当前方案列表显示
   getTopicList: function(){
     let accounts = ''
     window.web3.eth.accounts.forEach(e => accounts += e  +'\n')
     // window.App.displayTopicList(accounts)
-    window.App.displayTopicList('aaaaaaaaaaaaaaa\n\t bbbbbbbbbbbb\n ccccccccccc\n')
+    window.App.displayTopicList('aaaaaaaaaaaaaa    bbbbbbbbbbbb   ccccccccccc')
   },
 
-  // 方案提交
+  // Vote Page 方案提交
   submitTopic: function(){
 
   },
 
-  // 最终结果
+  // Vote Page 最终结果
   votingResult: function(){
 
   },
 
-  // Test新建客户
+  // 新建客户
   newCustomer: function () {
     customer.newCustomer(ScoreInstance, account)
   },

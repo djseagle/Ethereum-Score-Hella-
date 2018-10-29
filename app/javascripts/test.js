@@ -35,5 +35,15 @@ module.exports = {
     ScoreInstance.getSettledScoreAmount({ from: account }).then(function (result) {
       window.App.setStatus('已清算的积分总数为：' + result)
     })
-  }
+  },
+  //testsum
+  testsummary:function() {
+    const a = document.getElementById('testa').value
+    const b = document.getElementById('testb').value
+    const c = a + b
+    console.log('testsummary done, pending for display')
+    window.App.displaytestsummary(c)
+  },
+
+
 }
