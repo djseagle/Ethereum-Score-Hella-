@@ -37,15 +37,31 @@ module.exports = {
     })
   },
   //testsum
-  testsummary:function(TestInstance) {
-    const a = document.getElementById('testa').value
-    const b = document.getElementById('testb').value
-    const c = a + b
-    // TestInstance.setArgs(a,b).then(function (c) {
-    //   window.App.displayTopicList(c)
-    // })
-    console.log('testsummary done, pending for display')
-    window.App.displaytestsummary(c)
+  // testsummary2:function(TestInstance) {
+  //   const a = document.getElementById('testa').value
+  //   const b = document.getElementById('testb').value
+  //   const c = a + b
+  //   // TestInstance.setArgs(a,b).then(function (c) {
+  //   //   window.App.displayTopicList(c)
+  //   // })
+  //   console.log('testsummary done, pending for display')
+  //   window.App.displaytestsummary(c)
+  // },
+
+  testsummary: function (TestInstance,account) {
+      const a = document.getElementById('testa').value
+      const b = document.getElementById('testb').value
+      TestInstance.funAdd(a,b,{from: account, gas:30000}).then(function (e,r) {
+          if(!e){
+              console.log(r)
+              window.App.setStatus(r)
+              window.App.displaytestsummary(r)
+          }else{
+              console.log(e)
+              window.App.setStatus(e)
+              window.App.displaytestsummary(e)
+          }
+      })
   },
 
 

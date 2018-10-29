@@ -78,7 +78,8 @@ window.App = {
     // const c = a + b
     //window.App.displaytestsummary(c)
     //test.displaytestsummary(c)
-    test.testsummary(TestInstance)
+    test.testsummary(TestInstance,account)
+    console.log('will jump to test.js ')
   },
 
   // displaytestsummary
