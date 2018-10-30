@@ -1,6 +1,7 @@
+const util = require('./utils')
 module.exports = {
 
-  //默认coinbase是银行账户
+  // 默认coinbase是银行账户
   bankLogin: function (ScoreInstance, account) {
     const address = document.getElementById('bankLoginAddr').value
     ScoreInstance.getOwner({ from: account }).then(function (result) {
@@ -36,7 +37,7 @@ module.exports = {
       window.App.setStatus('已清算的积分总数为：' + result)
     })
   },
-  //testsum
+  // testsum
   // testsummary2:function(TestInstance) {
   //   const a = document.getElementById('testa').value
   //   const b = document.getElementById('testb').value
@@ -48,21 +49,26 @@ module.exports = {
   //   window.App.displaytestsummary(c)
   // },
 
-  testsummary: function (TestInstance,account) {
-      const a = document.getElementById('testa').value
-      const b = document.getElementById('testb').value
-      TestInstance.funAdd(a,b,{from: account, gas:30000}).then(function (e,r) {
-          if(!e){
-              console.log(r)
-              window.App.setStatus(r)
-              window.App.displaytestsummary(r)
-          }else{
-              console.log(e)
-              window.App.setStatus(e)
-              window.App.displaytestsummary(e)
-          }
-      })
-  },
-
+  testsummary: function (TestInstance, account) {
+    console.log('jumped into test.js')
+    const a = document.getElementById('testa').value
+    const b = document.getElementById('testb').value
+    console.log('A: ' + a + '    B:' + b)
+    const c = a + b
+    console.log('sum done')
+    window.App.setStatus(c)
+    window.App.displaytestsummary(c)
+    // TestInstance.funAdd(a, b).then(function (e,r) {
+    //     if(!e){
+    //         console.log(r)
+    //         window.App.setStatus(r);
+    //         window.App.displaytestsummary(r)
+    //     }else{
+    //         console.log(e)
+    //         window.App.setStatus(e)
+    //         window.App.displaytestsummary(e)
+    //     }
+    // })
+  }
 
 }

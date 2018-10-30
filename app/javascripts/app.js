@@ -61,7 +61,7 @@ window.App = {
     VoteContract.deployed().then(function (instance) {
       VoteInstance = instance
     }).catch(function (e) {
-      console.log(e,null)
+      console.log(e, null)
     })
 
     TestContract.deployed().then(function (instance) {
@@ -78,8 +78,9 @@ window.App = {
     // const c = a + b
     //window.App.displaytestsummary(c)
     //test.displaytestsummary(c)
-    test.testsummary(TestInstance,account)
     console.log('will jump to test.js ')
+    test.testsummary(TestInstance, account)
+
   },
 
   // displaytestsummary
